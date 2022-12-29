@@ -12,6 +12,7 @@ RBThree::RBThree()
 }
 RBThree::~RBThree() {}
 
+
 void RBThree::initializeNULLNode(RBNodePtr node, RBNodePtr parent) {
 	node->key = 0;
 	node->parent = parent;
@@ -148,7 +149,7 @@ void RBThree::deleteNodeHelper(RBNodePtr node, int key) {
 	}
 
 	if (z == TNULL) {
-		std::cout << "Couldn't find key in the tree" << std::endl;
+		std::cout << "Не удалось найти узел с данным ключом." << std::endl;
 		return;
 	}
 
@@ -254,14 +255,17 @@ void RBThree::printHelper(RBNodePtr root, std::string indent, bool last) {
 
 void RBThree::preorder()
 {
+	std::cout << "Pre-Order Traversal of Three: " << std::endl;
 	preOrderHelper(this->root);
 }
 
 void RBThree::inorder() {
+	std::cout << "In-Order Traversal of Three: " << std::endl;
 	inOrderHelper(this->root);
 }
 
 void RBThree::postorder() {
+	std::cout << "Post-Order Traversal of Three: " << std::endl;
 	postOrderHelper(this->root);
 }
 
@@ -395,7 +399,6 @@ void RBThree::insert(int key) {
 		return;
 	}
 
-	// Fix the tree
 	fixInsert(node);
 }
 
