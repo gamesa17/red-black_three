@@ -1,4 +1,4 @@
-﻿// RandBThree.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// RandBThree.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
@@ -13,9 +13,9 @@ int main()
 
 	std::cout << "Добро пожаловать! Выберите операцию и введите её заглавный номер:" << std::endl;
 
-	while (number != 4)
+	while (number != 7)
 	{
-		std::cout << "\n1.Ввод узла.\n2.Удаление узла.\n3.Вывод красно-черного дерева.\n4.Выход из программы." << std::endl;
+		std::cout << "\n1.Ввод узла.\n2.Удаление узла.\n3.Вывод красно-черного дерева.\n4.Pre-Order Traversal.\n5.In-Order Traversal.\n6.Post-Order Traversal\n7.Выход из программы." << std::endl;
 		std::cin >> number;
 
 		switch (number)
@@ -34,9 +34,16 @@ int main()
 			std::cout << "Вот так выглядит отсортированное созданное вами дерево: \n" << std::endl;
 			three.prettyPrint();
 			break;
+		case 4:
+			three.preorder();
+			break;
+		case 5:
+			three.inorder();
+			break;
+		case 6: 
+			three.postorder();
 		}
 	}
-
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
